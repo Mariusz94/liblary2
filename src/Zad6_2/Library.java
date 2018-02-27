@@ -1,8 +1,11 @@
 package Zad6_2;
 
 public class Library {
-    private Book[] books = new Book[5];
-    private String available;
+    private Book[] books;
+
+    public Library() {
+        this.books = new Book[5];
+    }
 
     public void addBook(Book book){
         for (int i = 0; i< books.length; i++){
@@ -24,7 +27,7 @@ public class Library {
     public void showAllAvailableBooks() {
         for (Book book : books) {
             if(book.getAvailable().equals("yes")){
-                book.toString();
+                System.out.println(book.toString());
             }
         }
     }
@@ -32,7 +35,7 @@ public class Library {
     public void showAllBorrowBooks() {
         for (Book book : books) {
             if(book.getAvailable().equals("no")){
-                book.toString();
+                System.out.println(book.toString());
             }
         }
     }
